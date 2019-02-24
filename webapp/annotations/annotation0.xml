@@ -23,7 +23,12 @@
 	<edmx:DataServices>
 		<Schema xmlns="http://docs.oasis-open.org/odata/ns/edm">
 			<Annotations Target="GWSAMPLE_BASIC.Product">
-				<Annotation Term="UI.SelectionFields"/>
+				<Annotation Term="UI.SelectionFields">
+					<Collection >
+						<PropertyPath>ProductID</PropertyPath>
+						<PropertyPath>Category</PropertyPath>
+					</Collection>
+				</Annotation>
 				<Annotation Term="UI.LineItem">
 					<Collection>
 						<Record Type="UI.DataField">
@@ -41,7 +46,31 @@
 						<Record Type="UI.DataField">
 							<PropertyValue Property="Value" Path="Price"/>
 						</Record>
+						<Record Type="UI.DataFieldForAction">
+							<PropertyValue Property="Action" String="GWSAMPLE_BASIC.GWSAMPLE_BASIC_Entities/RegenerateAllData"/>
+							<PropertyValue Property="Label" String="{@i18n&gt;customActionRegenerate}"/>
+						</Record>
 					</Collection>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="GWSAMPLE_BASIC.GWSAMPLE_BASIC_Entities/ProductSet">
+				<Annotation Term="Capabilities.UpdateRestrictions">
+					<Record Type="Capabilities.UpdateRestrictionsType">
+						<PropertyValue Property="NonUpdatableNavigationProperties"/>
+						<PropertyValue Property="Updatable" Bool="false"/>
+					</Record>
+				</Annotation>
+				<Annotation Term="Capabilities.DeleteRestrictions">
+					<Record Type="Capabilities.DeleteRestrictionsType">
+						<PropertyValue Property="NonDeletableNavigationProperties"/>
+						<PropertyValue Property="Deletable" Bool="false"/>
+					</Record>
+				</Annotation>
+				<Annotation Term="Capabilities.InsertRestrictions">
+					<Record Type="Capabilities.InsertRestrictionsType">
+						<PropertyValue Property="NonInsertableNavigationProperties"/>
+						<PropertyValue Property="Insertable" Bool="false"/>
+					</Record>
 				</Annotation>
 			</Annotations>
 		</Schema>
