@@ -121,7 +121,11 @@
 				"entitySet": "ProductSet",
 				"component": {
 					"name": "sap.suite.ui.generic.template.ListReport",
-					"list": true
+					"list": true,
+					"settings": {
+						"gridTable": false,
+						"multiSelect": false
+					}
 				},
 				"pages": {
 					"ObjectPage|ProductSet": {

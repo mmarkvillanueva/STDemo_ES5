@@ -23,8 +23,129 @@
 	<edmx:DataServices>
 		<Schema xmlns="http://docs.oasis-open.org/odata/ns/edm">
 			<Annotations Target="GWSAMPLE_BASIC.Product">
+				<Annotation Term="UI.Facets">
+					<Collection>
+						<Record Type="UI.CollectionFacet">
+							<PropertyValue Property="Facets">
+								<Collection>
+									<Record Type="UI.ReferenceFacet">
+										<PropertyValue Property="Target" AnnotationPath="@UI.Identification"/>
+										<PropertyValue Property="Label" String="{@i18n&gt;labelProductInfo}"/>
+									</Record>
+									<Record Type="UI.ReferenceFacet">
+										<PropertyValue Property="Target" AnnotationPath="@UI.StatusInfo"/>
+										<PropertyValue Property="Label" String="{@i18n&gt;labelStatusInfo}"/>
+									</Record>
+								</Collection>
+							</PropertyValue>
+							<PropertyValue Property="Label" String="{@i18n&gt;labelProductDetails}"/>
+						</Record>
+						<Record Type="UI.ReferenceFacet">
+							<PropertyValue Property="Target" AnnotationPath="ToSalesOrderLineItems/@UI.LineItem#SOLineItems"/>
+						</Record>
+					</Collection>
+				</Annotation>
+				<Annotation Term="UI.StatusInfo">
+					<Collection>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="CreatedAt"/>
+						</Record>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="ChangedAt"/>
+						</Record>
+					</Collection>
+				</Annotation>
+				<Annotation Term="UI.Identification">
+					<Collection>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="ProductID"/>
+						</Record>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="Name"/>
+						</Record>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="Category"/>
+						</Record>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="TypeCode"/>
+						</Record>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="Description"/>
+						</Record>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="Price"/>
+						</Record>
+					</Collection>
+				</Annotation>
+				<Annotation Term="UI.HeaderFacets">
+					<Collection>
+						<Record Type="UI.ReferenceFacet">
+							<PropertyValue Property="Target" AnnotationPath="@UI.FieldGroup#FGTechData"/>
+							<PropertyValue Property="Label" String="{@i18n&gt;titleTechnicalData}"/>
+							<PropertyValue Property="ID" String="RFTechData"/>
+						</Record>
+						<Record Type="UI.ReferenceFacet">
+							<PropertyValue Property="Target" AnnotationPath="@UI.DataPoint#Price"/>
+							<PropertyValue Property="Label" String="{@i18n&gt;titleDataPointPrice}"/>
+							<PropertyValue Property="ID" String="RFPrice"/>
+						</Record>
+						<Record Type="UI.ReferenceFacet">
+							<PropertyValue Property="Target" AnnotationPath="@UI.DataPoint#DPTaxTarifCode"/>
+							<PropertyValue Property="Label" String="{@i18n&gt;titleTaxTarifCode}"/>
+							<PropertyValue Property="ID" String="RFTaxCode"/>
+						</Record>
+					</Collection>
+				</Annotation>
+				<Annotation Term="UI.FieldGroup" Qualifier="FGTechData">
+					<Record Type="UI.FieldGroupType">
+						<PropertyValue Property="Data">
+							<Collection>
+								<Record Type="UI.DataField">
+									<PropertyValue Property="Value" Path="WeightMeasure"/>
+								</Record>
+								<Record Type="UI.DataField">
+									<PropertyValue Property="Value" Path="Width"/>
+								</Record>
+								<Record Type="UI.DataField">
+									<PropertyValue Property="Value" Path="Height"/>
+								</Record>
+								<Record Type="UI.DataField">
+									<PropertyValue Property="Value" Path="Depth"/>
+								</Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="UI.DataPoint" Qualifier="Price">
+					<Record Type="UI.DataPointType">
+						<PropertyValue Property="Title" String="{@i18n&gt;titleDataPointPrice}"/>
+						<PropertyValue Property="Value" Path="Price"/>
+					</Record>
+				</Annotation>
+				<Annotation Term="UI.DataPoint" Qualifier="DPTaxTarifCode">
+					<Record Type="UI.DataPointType">
+						<PropertyValue Property="Title" String="{@i18n&gt;titleTaxTarifCode}"/>
+						<PropertyValue Property="Value" Path="TaxTarifCode"/>
+					</Record>
+				</Annotation>
+				<Annotation Term="UI.HeaderInfo">
+					<Record Type="UI.HeaderInfoType">
+						<PropertyValue Property="TypeName" String="{@i18n&gt;titleProductSingular}"/>
+						<PropertyValue Property="TypeNamePlural" String="{@i18n&gt;titleProductsPlural}"/>
+						<PropertyValue Property="Title">
+							<Record Type="UI.DataField">
+								<PropertyValue Property="Value" Path="ProductID"/>
+							</Record>
+						</PropertyValue>
+						<PropertyValue Property="Description">
+							<Record Type="UI.DataField">
+								<PropertyValue Property="Value" Path="Name"/>
+							</Record>
+						</PropertyValue>
+					</Record>
+				</Annotation>
 				<Annotation Term="UI.SelectionFields">
-					<Collection >
+					<Collection>
 						<PropertyPath>ProductID</PropertyPath>
 						<PropertyPath>Category</PropertyPath>
 					</Collection>
@@ -57,7 +178,7 @@
 				<Annotation Term="Capabilities.UpdateRestrictions">
 					<Record Type="Capabilities.UpdateRestrictionsType">
 						<PropertyValue Property="NonUpdatableNavigationProperties"/>
-						<PropertyValue Property="Updatable" Bool="false"/>
+						<PropertyValue Property="Updatable" Bool="true"/>
 					</Record>
 				</Annotation>
 				<Annotation Term="Capabilities.DeleteRestrictions">
@@ -71,6 +192,24 @@
 						<PropertyValue Property="NonInsertableNavigationProperties"/>
 						<PropertyValue Property="Insertable" Bool="false"/>
 					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="GWSAMPLE_BASIC.SalesOrderLineItem">
+				<Annotation Term="UI.LineItem" Qualifier="SOLineItems">
+					<Collection>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="ProductID"/>
+						</Record>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="NetAmount"/>
+						</Record>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="TaxAmount"/>
+						</Record>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="GrossAmount"/>
+						</Record>
+					</Collection>
 				</Annotation>
 			</Annotations>
 		</Schema>

@@ -3,6 +3,24 @@
     {
       "filePath": "/webapp/Component.js",
       "previewMode": 0,
+      "dataMode": 0,
+      "workspace": "withoutWorkspace",
+      "ui5ActiveVersion": null,
+      "ui5VerSource": null,
+      "isDefaultVersion": 0,
+      "urlParameters": [],
+      "hashParameter": "",
+      "backendSystem": [],
+      "_metadata": {
+        "id": 23186,
+        "runnerId": "fiorirunner",
+        "displayName": "Run Component.js Mock Data",
+        "lastRunTimeStamp": 1551015615659
+      }
+    },
+    {
+      "filePath": "/webapp/Component.js",
+      "previewMode": 0,
       "dataMode": 1,
       "workspace": "withoutWorkspace",
       "ui5ActiveVersion": null,
@@ -15,7 +33,7 @@
         "id": 3053833,
         "runnerId": "fiorirunner",
         "displayName": "Run Component.js",
-        "lastRunTimeStamp": 1551008760152
+        "lastRunTimeStamp": 1551014956573
       }
     }
   ]
