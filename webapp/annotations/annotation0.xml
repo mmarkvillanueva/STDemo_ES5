@@ -42,6 +42,7 @@
 						</Record>
 						<Record Type="UI.ReferenceFacet">
 							<PropertyValue Property="Target" AnnotationPath="ToSalesOrderLineItems/@UI.LineItem#SOLineItems"/>
+							<PropertyValue Property="Label" String="{@i18n&gt;SALES_DATA}"/>
 						</Record>
 					</Collection>
 				</Annotation>
@@ -210,6 +211,26 @@
 							<PropertyValue Property="Value" Path="GrossAmount"/>
 						</Record>
 					</Collection>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="GWSAMPLE_BASIC.GWSAMPLE_BASIC_Entities/SalesOrderLineItemSet">
+				<Annotation Term="Capabilities.UpdateRestrictions">
+					<Record Type="Capabilities.UpdateRestrictionsType">
+						<PropertyValue Property="NonUpdatableNavigationProperties"/>
+						<PropertyValue Property="Updatable" Bool="false"/>
+					</Record>
+				</Annotation>
+				<Annotation Term="Capabilities.InsertRestrictions">
+					<Record Type="Capabilities.InsertRestrictionsType">
+						<PropertyValue Property="NonInsertableNavigationProperties"/>
+						<PropertyValue Property="Insertable" Bool="false"/>
+					</Record>
+				</Annotation>
+				<Annotation Term="Capabilities.DeleteRestrictions">
+					<Record Type="Capabilities.DeleteRestrictionsType">
+						<PropertyValue Property="NonDeletableNavigationProperties"/>
+						<PropertyValue Property="Deletable" Bool="false"/>
+					</Record>
 				</Annotation>
 			</Annotations>
 		</Schema>

@@ -132,6 +132,15 @@
 						"entitySet": "ProductSet",
 						"component": {
 							"name": "sap.suite.ui.generic.template.ObjectPage"
+						},
+						"pages": {
+							"ObjectPage|ToSalesOrderLineItems": {
+								"navigationProperty": "ToSalesOrderLineItems",
+								"entitySet": "SalesOrderLineItemSet",
+								"component": {
+									"name": "sap.suite.ui.generic.template.ObjectPage"
+								}
+							}
 						}
 					}
 				}
