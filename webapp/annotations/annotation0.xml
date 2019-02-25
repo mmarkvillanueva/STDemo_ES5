@@ -31,8 +31,9 @@
 									<PropertyValue Property="Value" Path="SupplierID"/>
 								</Record>
 								<Record Type="UI.DataFieldForAnnotation">
-									<PropertyValue Property="Label" String="{@i18n&gt;SUPPLIER_NAME}"/>
-									<PropertyValue Property="Target" AnnotationPath="ToSupplier/vCard.Contact#BPCommunication"/>
+									<PropertyValue Property="Label" String="{@i18n&gt;SUPPLIER}"/>
+									<PropertyValue Property="Target" AnnotationPath="ToSupplier/@vCard.Contact#BPCommunication"/>
+									<Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/>
 								</Record>
 							</Collection>
 						</PropertyValue>
@@ -113,6 +114,9 @@
 							<PropertyValue Property="Target" AnnotationPath="@UI.DataPoint#DPTaxTarifCode"/>
 							<PropertyValue Property="Label" String="{@i18n&gt;titleTaxTarifCode}"/>
 							<PropertyValue Property="ID" String="RFTaxCode"/>
+						</Record>
+						<Record Type="UI.ReferenceFacet">
+							<PropertyValue Property="Target" AnnotationPath="@UI.FieldGroup#FGSupplier"/>
 						</Record>
 					</Collection>
 				</Annotation>
@@ -259,12 +263,12 @@
 						<PropertyValue Property="tel">
 							<Collection>
 								<Record Type="vCard.PhoneNumberType">
-									<PropertyValue Property="type" EnumMember="vCard.PhoneType/fax"/>
-									<PropertyValue Property="uri" Path="FaxNumber"/>
-								</Record>
-								<Record Type="vCard.PhoneNumberType">
 									<PropertyValue Property="uri" Path="PhoneNumber"/>
 									<PropertyValue Property="type" EnumMember="vCard.PhoneType/preferred"/>
+								</Record>
+								<Record Type="vCard.PhoneNumberType">
+									<PropertyValue Property="type" EnumMember="vCard.PhoneType/fax"/>
+									<PropertyValue Property="uri" Path="FaxNumber"/>
 								</Record>
 							</Collection>
 						</PropertyValue>
