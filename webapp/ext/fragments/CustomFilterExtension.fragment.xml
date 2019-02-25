@@ -1,0 +1,13 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns:smartfilterbar="sap.ui.comp.smartfilterbar" xmlns="sap.m">
+	<smartfilterbar:ControlConfiguration groupId="_BASIC" index="1" key="PriceRangeFilter" label="Price ranges" visibleInAdvancedArea="true">
+		<smartfilterbar:customControl>
+			<ComboBox id="PriceRangeFilter-combobox" selectedKey="0">
+				<core:Item key="0" text="All"/>
+				<core:Item key="1" text="Price between 0-100"/>
+				<core:Item key="2" text="Price between 100-500"/>
+				<core:Item key="3" text="Price between 500-1000"/>
+				<core:Item key="4" text="Price over 1000"/>
+			</ComboBox>
+		</smartfilterbar:customControl>
+	</smartfilterbar:ControlConfiguration>
+</core:FragmentDefinition>

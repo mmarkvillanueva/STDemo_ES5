@@ -18,9 +18,7 @@
 				"type": "OData",
 				"settings": {
 					"localUri": "localService/metadata.xml",
-					"annotations": [
-						"annotation0"
-					]
+					"annotations": ["annotation0"]
 				}
 			},
 			"annotation0": {
@@ -52,10 +50,7 @@
 			"tablet": true,
 			"phone": true
 		},
-		"supportedThemes": [
-			"sap_hcb",
-			"sap_belize"
-		]
+		"supportedThemes": ["sap_hcb", "sap_belize"]
 	},
 	"sap.ui5": {
 		"resources": {
@@ -107,7 +102,61 @@
 			}
 		},
 		"extends": {
-			"extensions": {}
+			"extensions": {
+				"sap.ui.viewExtensions": {
+					"sap.suite.ui.generic.template.ListReport.view.ListReport": {
+						"SmartFilterBarControlConfigurationExtension|ProductSet": {
+							"className": "sap.ui.core.Fragment",
+							"fragmentName": "com.st.demostdemo_es5.ext.fragments.CustomFilterExtension",
+							"type": "XML"
+						},
+						"ResponsiveTableColumnsExtension|ProductSet": {
+							"className": "sap.ui.core.Fragment",
+							"fragmentName": "com.st.demostdemo_es5.ext.fragments.ListReportResponsiveTableColumns",
+							"type": "XML"
+						},
+						"ResponsiveTableCellsExtension|ProductSet": {
+							"className": "sap.ui.core.Fragment",
+							"fragmentName": "com.st.demostdemo_es5.ext.fragments.ListReportResponsiveTableCells",
+							"type": "XML"
+						}
+					}
+				},
+				"sap.ui.controllerExtensions": {
+					"sap.suite.ui.generic.template.ListReport.view.ListReport": {
+						"controllerName": "com.st.demostdemo_es5.ext.controllers.ListReportExtension",
+						"sap.ui.generic.app": {
+							"ProductSet": {
+								"EntitySet": "ProductSet",
+								"Actions": {
+									"ChangePrice": {
+										"id": "ChangePrice",
+										"text": "Change Price (Ext)",
+										"press": "onChangePrice"
+									}
+								}
+							}
+						}
+					},
+					"sap.suite.ui.generic.template.ObjectPage.view.Details": {
+						"controllerName": "com.st.demostdemo_es5.ext.controllers.ObjectPageExtension",
+						"sap.ui.generic.app": {
+							"ProductSet": {
+								"EntitySet": "ProductSet",
+								"Header": {
+									"Actions": {
+										"ObjectPageCustomAction": {
+											"id": "ObjectPageCustomAction",
+											"text": "My Custom Action",
+											"press": "onObjectPageCustomAction"
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
 		},
 		"contentDensities": {
 			"compact": true,

@@ -1,0 +1,4 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m">
+	<RatingIndicator value="{= ${Price} > 500 ? 1:5}" enabled="false"/>
+	<Text text="Additional info"></Text>
+</core:FragmentDefinition>

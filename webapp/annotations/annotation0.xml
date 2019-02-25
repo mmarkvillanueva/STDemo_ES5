@@ -23,6 +23,21 @@
 	<edmx:DataServices>
 		<Schema xmlns="http://docs.oasis-open.org/odata/ns/edm">
 			<Annotations Target="GWSAMPLE_BASIC.Product">
+				<Annotation Term="UI.FieldGroup" Qualifier="FGSupplier">
+					<Record Type="UI.FieldGroupType">
+						<PropertyValue Property="Data">
+							<Collection>
+								<Record Type="UI.DataField">
+									<PropertyValue Property="Value" Path="SupplierID"/>
+								</Record>
+								<Record Type="UI.DataFieldForAnnotation">
+									<PropertyValue Property="Label" String="{@i18n&gt;SUPPLIER_NAME}"/>
+									<PropertyValue Property="Target" AnnotationPath="ToSupplier/vCard.Contact#BPCommunication"/>
+								</Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
 				<Annotation Term="UI.Facets">
 					<Collection>
 						<Record Type="UI.CollectionFacet">
@@ -35,6 +50,10 @@
 									<Record Type="UI.ReferenceFacet">
 										<PropertyValue Property="Target" AnnotationPath="@UI.StatusInfo"/>
 										<PropertyValue Property="Label" String="{@i18n&gt;labelStatusInfo}"/>
+									</Record>
+									<Record Type="UI.ReferenceFacet">
+										<PropertyValue Property="Target" AnnotationPath="@UI.FieldGroup#FGSupplier"/>
+										<PropertyValue Property="Label" String="{@i18n&gt;SUPPLIER}"/>
 									</Record>
 								</Collection>
 							</PropertyValue>
@@ -230,6 +249,33 @@
 					<Record Type="Capabilities.DeleteRestrictionsType">
 						<PropertyValue Property="NonDeletableNavigationProperties"/>
 						<PropertyValue Property="Deletable" Bool="false"/>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="GWSAMPLE_BASIC.BusinessPartner">
+				<Annotation Term="vCard.Contact" Qualifier="BPCommunication">
+					<Record Type="vCard.ContactType">
+						<PropertyValue Property="fn" Path="CompanyName"/>
+						<PropertyValue Property="tel">
+							<Collection>
+								<Record Type="vCard.PhoneNumberType">
+									<PropertyValue Property="type" EnumMember="vCard.PhoneType/fax"/>
+									<PropertyValue Property="uri" Path="FaxNumber"/>
+								</Record>
+								<Record Type="vCard.PhoneNumberType">
+									<PropertyValue Property="uri" Path="PhoneNumber"/>
+									<PropertyValue Property="type" EnumMember="vCard.PhoneType/preferred"/>
+								</Record>
+							</Collection>
+						</PropertyValue>
+						<PropertyValue Property="email">
+							<Collection>
+								<Record Type="vCard.EmailAddressType">
+									<PropertyValue Property="address" Path="EmailAddress"/>
+									<PropertyValue Property="type" EnumMember="vCard.ContactInformationType/preferred"/>
+								</Record>
+							</Collection>
+						</PropertyValue>
 					</Record>
 				</Annotation>
 			</Annotations>
