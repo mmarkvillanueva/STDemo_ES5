@@ -115,9 +115,6 @@
 							<PropertyValue Property="Label" String="{@i18n&gt;titleTaxTarifCode}"/>
 							<PropertyValue Property="ID" String="RFTaxCode"/>
 						</Record>
-						<Record Type="UI.ReferenceFacet">
-							<PropertyValue Property="Target" AnnotationPath="@UI.FieldGroup#FGSupplier"/>
-						</Record>
 					</Collection>
 				</Annotation>
 				<Annotation Term="UI.FieldGroup" Qualifier="FGTechData">

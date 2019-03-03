@@ -1,5 +1,5 @@
 sap.ui.controller("com.st.demostdemo_es5.ext.controllers.ListReportExtension", {
-
+	
 	onBeforeRebindTableExtension: function(oEvent) {
 
 		var oBindingParams = oEvent.getParameter("bindingParams");
