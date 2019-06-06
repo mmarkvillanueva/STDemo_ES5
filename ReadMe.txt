@@ -1,0 +1,1 @@
+Exercise Link: https://blogs.sap.com/2016/04/14/how-to-use-smart-templates-with-sap-web-ide-introduction/
